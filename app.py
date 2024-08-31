@@ -29,20 +29,21 @@ def index():
 # Form submission route
 @app.route('/submit', methods=['POST'])
 def submit():
-    student_name = request.form['student_name']
-    attempted_question = int(request.form['attempted_question'])
-    correct_question = int(request.form['correct_question'])
-    incorrect_question = attempted_question - correct_question
-    score = 4*correct_question - incorrect_question
+    if request.method == 'POST':
+        student_name = request.form['student_name']
+        attempted_question = int(request.form['attempted_question'])
+        correct_question = int(request.form['correct_question'])
+        incorrect_question = attempted_question - correct_question
+        score = 4*correct_question - incorrect_question
 
-    conn = sqlite3.connect('score.db')
-    cursor = conn.cursor()
-    cursor.execute(
-        'INSERT INTO user_input (student_name, attempted_question, correct_question, incorrect_question, score) VALUES (?, ?, ?, ?, ?)',
-        (student_name, attempted_question, correct_question, incorrect_question, score)
-    )
-    conn.commit()
-    conn.close()
+        conn = sqlite3.connect('score.db')
+        cursor = conn.cursor()
+        cursor.execute(
+            'INSERT INTO user_input (student_name, attempted_question, correct_question, incorrect_question, score) VALUES (?, ?, ?, ?, ?)',
+            (student_name, attempted_question, correct_question, incorrect_question, score)
+        )
+        conn.commit()
+        conn.close()
 
     return redirect(url_for('index'))
 
