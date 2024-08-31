@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Input Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Enter Student Data</h1>
+        <form action="{{ url_for('submit') }}" method="POST">
+            <div class="form-group">
+                <label for="student_name">Student Name:</label>
+                <input type="text" id="student_name" name="student_name" placeholder="Enter student name">
+            </div>
+
+            <div class="form-group">
+                <label for="attempted_question">Attempted Questions:</label>
+                <input type="number" id="attempted_question" name="attempted_question" placeholder="Enter total attempted questions">
+            </div>
+
+            <div class="form-group">
+                <label for="correct_question">Correct Questions:</label>
+                <input type="number" id="correct_question" name="correct_question" placeholder="Enter correct questions">
+            </div>
+
+
+            <input type="submit" value="Submit">
+        </form>
+
+        <a href="{{ url_for('download_db') }}" class="download-link">Download Database</a>
+    </div>
+</body>
+</html>

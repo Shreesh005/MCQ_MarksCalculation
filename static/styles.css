@@ -1,0 +1,97 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.5), 0 0 40px rgba(255, 0, 255, 0.5);
+    max-width: 400px;
+    text-align: center;
+}
+
+h1 {
+    color: #0ff;
+    text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    color: #0ff;
+    text-shadow: 0 0 5px #0ff;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #0ff;
+    box-shadow: inset 0 0 10px #0ff;
+    outline: none;
+}
+
+input[type="text"]::placeholder,
+input[type="number"]::placeholder {
+    color: #0ff;
+    opacity: 0.7;
+}
+
+input[type="submit"] {
+    background-color: #39ff14; /* Bright green */
+    color: #000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-shadow: 0 0 5px #fff;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+    background-color: #2bff00; /* Slightly darker green */
+    box-shadow: 0 0 10px #2bff00, 0 0 20px #2bff00;
+}
+
+.download-link {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #0ff;
+    text-shadow: 0 0 5px #0ff;
+    padding: 10px 20px;
+    border: 1px solid #0ff;
+    border-radius: 5px;
+    transition: color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.download-link:hover {
+    color: #00cccc;
+    box-shadow: 0 0 10px #00cccc, 0 0 20px #00cccc;
+}
+
+.container:hover {
+    box-shadow: 0 0 25px rgba(255, 0, 255, 0.7), 0 0 50px rgba(255, 0, 255, 0.7);
+}
